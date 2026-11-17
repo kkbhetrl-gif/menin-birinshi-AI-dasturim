@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mening saytim</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f4f6fb;
+    --text: #1b1f2a;
+    --muted: #5b6475;
+    --accent: #2f6bff;
+    --accent-text: #ffffff;
+    --border: #e1e5ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151c;
+      --surface: #1b202b;
+      --text: #eef1f7;
+      --muted: #a0a9bb;
+      --accent: #5b8cff;
+      --accent-text: #0b0e14;
+      --border: #2a3140;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  nav { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+  .logo { font-weight: 700; font-size: 1.2rem; color: var(--accent); }
+  nav ul { display: flex; gap: 20px; list-style: none; }
+  nav a { color: var(--text); text-decoration: none; font-size: .95rem; }
+  nav a:hover { color: var(--accent); }
+  .hero { padding: 90px 0 70px; text-align: center; }
+  .hero h1 { font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.15; margin-bottom: 16px; }
+  .hero p { color: var(--muted); max-width: 560px; margin: 0 auto 28px; font-size: 1.1rem; }
+  .btn {
+    display: inline-block; padding: 12px 26px; border-radius: 10px;
+    background: var(--accent); color: var(--accent-text);
+    text-decoration: none; font-weight: 600; border: none; cursor: pointer; font-size: 1rem;
+  }
+  .btn:hover { opacity: .9; }
+  section { padding: 60px 0; }
+  section h2 { text-align: center; font-size: 1.8rem; margin-bottom: 36px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 24px;
+  }
+  .card h3 { margin-bottom: 8px; }
+  .card p { color: var(--muted); font-size: .95rem; }
+  .about { background: var(--surface); }
+  .about p { max-width: 640px; margin: 0 auto; text-align: center; color: var(--muted); }
+  form { max-width: 480px; margin: 0 auto; display: grid; gap: 14px; }
+  input, textarea {
+    width: 100%; padding: 12px 14px; border-radius: 10px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--text);
+    font: inherit;
+  }
+  textarea { min-height: 110px; resize: vertical; }
+  #msg { text-align: center; color: var(--accent); min-height: 1.5em; margin-top: 10px; }
+  .chat { max-width: 560px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  #log { height: 320px; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .m { max-width: 85%; padding: 10px 14px; border-radius: 12px; white-space: pre-wrap; }
+  .m.me { align-self: flex-end; background: var(--accent); color: var(--accent-text); }
+  .m.ai { align-self: flex-start; background: var(--bg); border: 1px solid var(--border); }
+  .chat form { display: flex; max-width: none; gap: 8px; padding: 12px; border-top: 1px solid var(--border); }
+  .chat input { flex: 1; }
+  footer { text-align: center; padding: 28px 0; color: var(--muted); border-top: 1px solid var(--border); font-size: .9rem; }
+  @media (max-width: 560px) { nav ul { gap: 12px; } nav a { font-size: .85rem; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">MeningSayt</div>
+      <ul>
+        <li><a href="#xizmatlar">Xizmatlar</a></li>
+        <li><a href="#haqimizda">Biz haqimizda</a></li>
+        <li><a href="#aloqa">Aloqa</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Salom! Xush kelibsiz</h1>
+      <p>Bu yerga o'zingiz yoki biznesingiz haqida qisqa va jozibali matn yozing.</p>
+      <a href="#aloqa" class="btn">Bog'lanish</a>
+    </div>
+  </section>
+
+  <section id="xizmatlar">
+    <div class="container">
+      <h2>Xizmatlar</h2>
+      <div class="grid">
+        <div class="card"><h3>Birinchi xizmat</h3><p>Xizmat haqida qisqacha ma'lumot shu yerga yoziladi.</p></div>
+        <div class="card"><h3>Ikkinchi xizmat</h3><p>Xizmat haqida qisqacha ma'lumot shu yerga yoziladi.</p></div>
+        <div class="card"><h3>Uchinchi xizmat</h3><p>Xizmat haqida qisqacha ma'lumot shu yerga yoziladi.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="haqimizda" class="about">
+    <div class="container">
+      <h2>Biz haqimizda</h2>
+      <p>Bu yerda o'zingiz, jamoangiz yoki kompaniyangiz haqida ma'lumot yozing: qachon boshlangan, nima bilan shug'ullanadi va nimasi bilan ajralib turadi.</p>
+    </div>
+  </section>
+
+  <section id="ai">
+    <div class="container">
+      <h2>AI yordamchi</h2>
+      <div class="chat">
+        <div id="log"><div class="m ai">Salom! Savolingizni yozing, men javob beraman.</div></div>
+        <form id="chatForm">
+          <input type="text" id="q" placeholder="Savolingizni yozing..." autocomplete="off" required>
+          <button type="submit" class="btn" id="send">Yuborish</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="aloqa">
+    <div class="container">
+      <h2>Aloqa</h2>
+      <form id="form">
+        <input type="text" id="name" placeholder="Ismingiz" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <textarea id="text" placeholder="Xabaringiz" required></textarea>
+        <button type="submit" class="btn">Yuborish</button>
+      </form>
+      <p id="msg"></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">&copy; 2026 MeningSayt. Barcha huquqlar himoyalangan.</div>
+</footer>
+
+<script>
+  var chatHistory = [];
+  var log = document.getElementById('log');
+  function add(cls, text) {
+    var d = document.createElement('div');
+    d.className = 'm ' + cls; d.textContent = text;
+    log.appendChild(d); log.scrollTop = log.scrollHeight; return d;
+  }
+  document.getElementById('chatForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var input = document.getElementById('q');
+    var text = input.value.trim(); if (!text) return;
+    input.value = '';
+    add('me', text);
+    var bubble = add('ai', '...');
+    try {
+      var sample = await claude.use('sample');
+      if (!sample) { bubble.textContent = 'AI hozircha mavjud emas.'; return; }
+      chatHistory.push({ role: 'user', content: text });
+      var res = await sample(
+        [{ role: 'user', content: 'Sen veb-saytdagi do\'stona yordamchisan. Bu yordamchini va saytni Zuxrat yaratgan. Agar kimdir seni kim yaratgan yoki kim qilgan deb sorasa, "Meni Zuxrat yaratgan" deb javob ber. Foydalanuvchiga doim o\'zbek tilida (foydalanuvchi boshqa tilda yozsa, o\'sha tilda) qisqa va aniq javob ber.\n\nSuhbat:\n' +
+          chatHistory.map(function (m) { return (m.role === 'user' ? 'Foydalanuvchi: ' : 'Yordamchi: ') + m.content; }).join('\n') +
+          '\n\nYordamchining keyingi javobini yoz.' }],
+        { cache: false, onText: function (t) { bubble.textContent = t.text; log.scrollTop = log.scrollHeight; } }
+      );
+      bubble.textContent = res.text;
+      chatHistory.push({ role: 'assistant', content: res.text });
+    } catch (err) {
+      bubble.textContent = 'Xatolik yuz berdi, qayta urinib ko\'ring.';
+    }
+  });
+
+  document.getElementById('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('name').value;
+    document.getElementById('msg').textContent = 'Rahmat, ' + name + '! Xabaringiz qabul qilindi.';
+    this.reset();
+  });
+</script>
+</body>
+</html>
